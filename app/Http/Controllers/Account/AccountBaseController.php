@@ -17,6 +17,7 @@ namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\FrontController;
 use App\Models\Company;
+use App\Models\Employee;
 use App\Models\Post;
 use App\Models\Message;
 use App\Models\Payment;
@@ -39,6 +40,7 @@ abstract class AccountBaseController extends FrontController
 	public $messages;
 	public $transactions;
 	public $companies;
+  public $employees;
 	public $resumes;
 
     /**
@@ -47,12 +49,12 @@ abstract class AccountBaseController extends FrontController
     public function __construct()
     {
         parent::__construct();
-		
+
         $this->middleware(function ($request, $next) {
             $this->leftMenuInfo();
             return $next($request);
         });
-	
+
 		view()->share('pagePath', '');
     }
 
@@ -101,7 +103,7 @@ abstract class AccountBaseController extends FrontController
             ->where('user_id', Auth::user()->id)
             ->orderByDesc('id');
         view()->share('countSavedSearch', $savedSearch->count());
-	
+
 		// Messages
 		$this->messages = Message::whereHas('post', function($q) {
 			$q->currentCountry()->whereHas('user', function($q) {
@@ -110,7 +112,7 @@ abstract class AccountBaseController extends FrontController
 		})->with('post')
 			->orderByDesc('id');
 		view()->share('countMessages', $this->messages->count());
-	
+
 		// Payments
 		$this->transactions = Payment::whereHas('post', function($q) {
 			$q->currentCountry()->whereHas('user', function($q) {
@@ -119,11 +121,16 @@ abstract class AccountBaseController extends FrontController
 		})->with(['post', 'paymentMethod'])
             ->orderByDesc('id');
 		view()->share('countTransactions', $this->transactions->count());
-	
+
 		// Companies
 		$this->companies = Company::where('user_id', Auth::user()->id)->orderByDesc('id');
 		view()->share('countCompanies', $this->companies->count());
-	
+
+    $this->employees = Employee::where('company_id',
+    2)->orderByDesc('id');
+		view()->share('countEmployees', $this->employees->count());
+
+
 		// Resumes
 		$this->resumes = Resume::where('user_id', Auth::user()->id)->orderByDesc('id');
 		view()->share('countResumes', $this->resumes->count());

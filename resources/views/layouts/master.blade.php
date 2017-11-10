@@ -65,23 +65,31 @@
 	@if (config('settings.alexa_verify_id'))
 		<meta name="alexaVerifyID" content="{{ config('settings.alexa_verify_id') }}" />
 	@endif
-	
+
 	@yield('before_styles')
-	
+
 	<link href="{{ url(mix('css/app.css')) }}" rel="stylesheet">
+
+  @if( url()->current() == route('create_employee'))
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ url(mix('css/starrr.css')) }}">
+  @endif
+
 	@if (isset($detectAdsBlockerPlugin) and !empty($detectAdsBlockerPlugin))
 		<link href="{{ url('assets/detectadsblocker/css/style.css') . getPictureVersion() }}" rel="stylesheet">
 	@endif
 	<link href="{{ url('css/custom.css') . getPictureVersion() }}" rel="stylesheet">
-	
+
 	@yield('after_styles')
-	
+
 	@if (isset($installedPlugins) and count($installedPlugins) > 0)
 		@foreach($installedPlugins as $pluginName)
 			@yield($pluginName . '_styles')
 		@endforeach
 	@endif
-	
+
 	@if (config('settings.custom_css'))
 	<style type="text/css">
 		<?php
@@ -115,7 +123,7 @@
 
 	@section('search')
 	@show
-		
+
 	@section('wizard')
 	@show
 
@@ -137,7 +145,7 @@
 
 	@section('info')
 	@show
-	
+
 	@section('footer')
 		@include('layouts.inc.footer')
 	@show
@@ -187,13 +195,13 @@
 			dropdownAutoWidth: 'true',
 			minimumResultsForSearch: Infinity
 		});
-		
+
 		{{-- Searchable Select Boxes --}}
 		$('.sselecter').select2({
 			language: '{{ config('app.locale') }}',
 			dropdownAutoWidth: 'true'
 		});
-		
+
 		{{-- Social Share --}}
 		$('.share').ShareLink({
 			title: '{{ addslashes(MetaTag::get('title')) }}',
@@ -202,7 +210,7 @@
 			width: 640,
 			height: 480
 		});
-		
+
 		{{-- Modal Login --}}
 		@if (isset($errors) and $errors->any())
 			@if ($errors->any() and old('quickLoginForm')=='1')
@@ -224,5 +232,33 @@
 	/* Tracking Code */
 	echo config('settings.tracking_code') . "\n";
 ?>
+@if( url()->current() == route('create_employee'))
+<script src="{{ url(mix('js/starrr.js')) }}"></script>
+<script>
+$('#star1').starrr({
+     change: function(e, value){
+       if (value) {
+         $('.your-choice-was').show();
+         $('.choice').text(value);
+       } else {
+         $('.your-choice-was').hide();
+       }
+     }
+   });
+
+   var $s2input = $('#star2_input');
+   
+$('.starrr').on('starrr:change', function(e, value){
+       $("#rating_count").val(value);
+     });
+
+$("#star1 a").on('click', function() {
+  console.log($("#rating_count").val());
+
+});
+
+</script>
+
+@endif
 </body>
 </html>

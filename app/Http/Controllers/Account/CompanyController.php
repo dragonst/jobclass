@@ -25,13 +25,13 @@ class CompanyController extends AccountBaseController
 {
 	private $perPage = 10;
 	public $pagePath = 'companies';
-	
+
 	public function __construct()
 	{
 		parent::__construct();
-		
+
 		$this->perPage = (is_numeric(config('settings.posts_per_page'))) ? config('settings.posts_per_page') : $this->perPage;
-		
+
 		view()->share('pagePath', $this->pagePath);
 	}
 
@@ -51,7 +51,8 @@ class CompanyController extends AccountBaseController
 
         return view('account.company.index')->with('companies', $companies);
     }
-	
+
+
 	/**
 	 * Show the form for creating a new resource.
 	 */
@@ -60,10 +61,10 @@ class CompanyController extends AccountBaseController
 		// Meta Tags
 		MetaTag::set('title', t('Create a new company'));
 		MetaTag::set('description', t('Create a new company - :app_name', ['app_name' => config('settings.app_name')]));
-		
+
 		return view('account.company.create');
 	}
-	
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -80,23 +81,23 @@ class CompanyController extends AccountBaseController
 		if (!isset($companyInfo['country_code']) || empty($companyInfo['country_code'])) {
 			$companyInfo += ['country_code' => config('country.code')];
 		}
-		
+
 		// Create the User's Company
 		$company = new Company($companyInfo);
 		$company->save();
-		
+
 		flash(t("Your company has created successfully."))->success();
-		
+
 		// Save the Company's Logo
 		if ($request->hasFile('company.logo')) {
 			$company->logo = $request->file('company.logo');
 			$company->save();
 		}
-		
+
 		// Redirection
 		return redirect(config('app.locale') . '/account/companies');
 	}
-	
+
 	/**
 	 * Display the specified resource.
 	 *
@@ -107,7 +108,7 @@ class CompanyController extends AccountBaseController
 	{
 		return redirect(config('app.locale') . '/account/companies/' . $id . '/edit');
 	}
-	
+
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -118,14 +119,14 @@ class CompanyController extends AccountBaseController
 	{
 		// Get the Company
 		$company = Company::where('id', $id)->where('user_id', Auth::user()->id)->firstOrFail();
-		
+
 		// Meta Tags
 		MetaTag::set('title', t('Edit the Company'));
 		MetaTag::set('description', t('Edit the Company - :app_name', ['app_name' => config('settings.app_name')]));
-		
+
 		return view('account.company.edit')->with('company', $company);
 	}
-	
+
 	/**
 	 * Update the specified resource in storage.
 	 *
@@ -136,7 +137,7 @@ class CompanyController extends AccountBaseController
 	public function update($id, CompanyRequest $request)
 	{
 		$company = Company::where('id', $id)->where('user_id', Auth::user()->id)->firstOrFail();
-		
+
 		// Get Company Info
 		$companyInfo = $request->input('company');
 		if (!isset($companyInfo['user_id']) || empty($companyInfo['user_id'])) {
@@ -145,22 +146,22 @@ class CompanyController extends AccountBaseController
 		if (!isset($companyInfo['country_code']) || empty($companyInfo['country_code'])) {
 			$companyInfo += ['country_code' => config('country.code')];
 		}
-		
+
 		// Make an Update
 		$company->update($companyInfo);
-		
+
 		flash(t("Your company details has updated successfully."))->success();
-		
+
 		// Save the Company's Logo
 		if ($request->hasFile('company.logo')) {
 			$company->logo = $request->file('company.logo');
 			$company->save();
 		}
-		
+
 		// Redirection
 		return redirect(config('app.locale') . '/account/companies');
 	}
-	
+
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -180,7 +181,7 @@ class CompanyController extends AccountBaseController
 				$ids[] = $id;
 			}
 		}
-		
+
 		// Delete
 		$nb = 0;
 		foreach ($ids as $item) {
@@ -190,7 +191,7 @@ class CompanyController extends AccountBaseController
 				$nb = $company->delete();
 			}
 		}
-		
+
 		// Confirmation
 		if ($nb == 0) {
 			flash(t("No deletion is done. Please try again."))->error();
@@ -202,7 +203,7 @@ class CompanyController extends AccountBaseController
 				flash(t("1 :entity has been deleted successfully.", ['entity' => t('company')]))->success();
 			}
 		}
-		
+
 		return redirect(config('app.locale') . '/account/companies');
 	}
 }

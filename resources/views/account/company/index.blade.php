@@ -41,7 +41,7 @@
 							<a href="{{ lurl('account/companies/create') }}" class="btn btn-default"><i class="icon-plus"></i> {{ t('Create a new company') }}</a>
 						</div>
 						<br>
-						
+
 						<div class="table-responsive">
 							<form name="listForm" method="POST" action="{{ lurl('account/companies/delete') }}">
 								{!! csrf_field() !!}
@@ -129,6 +129,11 @@
 															<i class="fa fa-trash"></i> {{ t('Delete') }}
 														</a>
 													</p>
+                          <p>
+														<a class="btn btn-success btn-xs" href="{{ lurl('account/employees') }}">
+															<i class="fa fa-plus"></i> {{ t('Employees') }}
+														</a>
+													</p>
 												@endif
 											</div>
 										</td>
@@ -139,7 +144,7 @@
 								</table>
 							</form>
 						</div>
-							
+
                         <div class="pagination-bar text-center">
                             {{ (isset($companies)) ? $companies->links() : '' }}
                         </div>
@@ -173,12 +178,12 @@
 			$('#checkAll').click(function () {
 				checkAll(this);
 			});
-			
+
 			$('a.delete-action, button.delete-action').click(function(e)
 			{
 				e.preventDefault(); /* prevents the submit or reload */
 				var confirmation = confirm("{{ t('Are you sure you want to perform this action?') }}");
-				
+
 				if (confirmation) {
 					if( $(this).is('a') ){
 						var url = $(this).attr('href');
@@ -188,9 +193,9 @@
 					} else {
 						$('form[name=listForm]').submit();
 					}
-					
+
 				}
-				
+
 				return false;
 			});
 		});

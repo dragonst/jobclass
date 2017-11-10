@@ -2,3 +2,12 @@
  * Your custom CSS here...
  */
 
+ .clear-rating.clear-rating-active {
+     display: none;
+ }
+
+#companyFields .caption {display:none;}
+
+.rating-md {
+    font-size: 2.13em;
+}

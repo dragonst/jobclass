@@ -68,6 +68,7 @@ Route::group([
     CRUD::resource('category/{catId}/sub_category', 'SubCategoryController');
     CRUD::resource('city', 'CityController');
 	CRUD::resource('company', 'CompanyController');
+CRUD::resource('employee', 'EmployeeController');
     CRUD::resource('country', 'CountryController');
     CRUD::resource('country/{countryCode}/city', 'CityController');
     CRUD::resource('country/{countryCode}/loc_admin1', 'SubAdmin1Controller');
@@ -94,7 +95,7 @@ Route::group([
     Route::get('account', 'UserController@account');
     Route::post('ajax/{table}/{field}', 'AjaxController@saveAjaxRequest');
     Route::get('clear_cache', 'CacheController@clear');
-    
+
     // Re-send Email or Phone verification message
     Route::get('verify/user/{id}/resend/email', 'UserController@reSendVerificationEmail');
     Route::get('verify/user/{id}/resend/sms', 'UserController@reSendVerificationSms');
@@ -230,15 +231,15 @@ Route::group([
             // Authentication Routes...
             Route::get(LaravelLocalization::transRoute('routes.login'), 'Auth\LoginController@showLoginForm');
             Route::post(LaravelLocalization::transRoute('routes.login'), 'Auth\LoginController@login');
-	
+
 			// Forgot Password Routes...
 			Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
 			Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-	
+
 			// Reset Password using Token
 			Route::get('password/token', 'Auth\ForgotPasswordController@showTokenRequestForm');
 			Route::post('password/token', 'Auth\ForgotPasswordController@sendResetToken');
-	
+
 			// Reset Password using Link (Core Routes...)
 			Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
 			Route::post('password/reset', 'Auth\ResetPasswordController@reset');
@@ -272,32 +273,32 @@ Route::group([
             Route::get('posts/create/{tmpToken}/packages', 'PackageController@getForm');
             Route::post('posts/create/{tmpToken}/packages', 'PackageController@postForm');
             Route::get('posts/create/{tmpToken}/finish', 'CreateController@finish');
-    
+
             // Payment Gateway Success & Cancel
             Route::get('posts/create/{tmpToken}/payment/success', 'PackageController@paymentConfirmation');
             Route::get('posts/create/{tmpToken}/payment/cancel', 'PackageController@paymentCancel');
-    
+
             // Email Address or Phone Number verification
             $router->pattern('field', 'email|phone');
             Route::get('verify/post/{id}/resend/email', 'CreateController@reSendVerificationEmail');
             Route::get('verify/post/{id}/resend/sms', 'CreateController@reSendVerificationSms');
             Route::get('verify/post/{field}/{token?}', 'CreateController@verification');
             Route::post('verify/post/{field}/{token?}', 'CreateController@verification');
-    
+
             Route::group(['middleware' => 'auth'], function ($router) {
                 $router->pattern('id', '[0-9]+');
                 Route::get('posts/{id}/edit', 'EditController@getForm');
                 Route::put('posts/{id}/edit', 'EditController@postForm');
                 Route::get('posts/{id}/packages', 'PackageController@getForm');
                 Route::post('posts/{id}/packages', 'PackageController@postForm');
-        
+
                 // Payment Gateway Success & Cancel
                 Route::get('posts/{id}/payment/success', 'PackageController@paymentConfirmation');
                 Route::get('posts/{id}/payment/cancel', 'PackageController@paymentCancel');
             });
             Route::get('{title}/{id}.html', 'DetailsController@index');
             Route::post('posts/{id}/contact', 'DetailsController@sendMessage');
-    
+
             // Send report abuse
             Route::get('posts/{id}/report', 'ReportController@showReportForm');
             Route::post('posts/{id}/report', 'ReportController@sendReport');
@@ -316,7 +317,7 @@ Route::group([
 			Route::put('account/preferences', 'EditController@updatePreferences');
 			Route::get('account/close', 'CloseController@index');
 			Route::post('account/close', 'CloseController@submit');
-            
+
             // Companies
 			Route::get('account/companies', 'CompanyController@index');
 			Route::get('account/companies/create', 'CompanyController@create');
@@ -326,7 +327,12 @@ Route::group([
 			Route::put('account/companies/{id}', 'CompanyController@update');
 			Route::get('account/companies/{id}/delete', 'CompanyController@destroy');
 			Route::post('account/companies/delete', 'CompanyController@destroy');
-	
+
+			//Employees
+			Route::get('account/employees', 'EmployeeController@index');
+			Route::get('account/employee/create', 'EmployeeController@create')->name('create_employee');
+			Route::post('account/employees', 'EmployeeController@store');
+
 			// Resumes
 			Route::get('account/resumes', 'ResumeController@index');
 			Route::get('account/resumes/create', 'ResumeController@create');
@@ -336,7 +342,7 @@ Route::group([
 			Route::put('account/resumes/{id}', 'ResumeController@update');
 			Route::get('account/resumes/{id}/delete', 'ResumeController@destroy');
 			Route::post('account/resumes/delete', 'ResumeController@destroy');
-			
+
 			// Posts
             Route::get('account/saved-search', 'PostsController@getSavedSearch');
             $router->pattern('pagePath', '(my-posts|archived|favourite|pending-approval|saved-search)+');
@@ -344,13 +350,13 @@ Route::group([
             Route::get('account/{pagePath}/{id}/repost', 'PostsController@getArchivedPosts');
             Route::get('account/{pagePath}/{id}/delete', 'PostsController@destroy');
             Route::post('account/{pagePath}/delete', 'PostsController@destroy');
-	
+
 			// Messages
 			Route::get('account/messages', 'MessagesController@index');
 			Route::post('account/messages/{id}/reply', 'MessagesController@reply');
 			Route::get('account/messages/{id}/delete', 'MessagesController@destroy');
 			Route::post('account/messages/delete', 'MessagesController@destroy');
-	
+
 			// Transactions
 			Route::get('account/transactions', 'TransactionsController@index');
         });

@@ -27,9 +27,9 @@ return [
     | services your application utilizes. Set this in your ".env" file.
     |
     */
-    
+
     'env' => env('APP_ENV', 'local'),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -40,9 +40,9 @@ return [
     | application. If disabled, a simple generic error page is shown.
     |
     */
-    
+
     'debug' => env('APP_DEBUG', true),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -55,7 +55,7 @@ return [
     */
 
     'url' => env('APP_URL', $protocol . $server_name),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -66,9 +66,9 @@ return [
     | ahead and set this to a sensible default for you out of the box.
     |
     */
-    
+
     'timezone' => 'UTC',
-    
+
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -79,9 +79,9 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-    
+
     'locale' => 'en',
-    
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -92,7 +92,7 @@ return [
     | the language folders that are provided through your application.
     |
     */
-    
+
     'fallback_locale' => 'en',
 
     /*
@@ -128,7 +128,7 @@ return [
 	'log_max_files' =>  env('APP_LOG_MAX_FILES', 2),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -139,7 +139,7 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
-    
+
     'providers' => [
 
         /*
@@ -203,9 +203,9 @@ return [
 		Propaganistas\LaravelPhone\LaravelPhoneServiceProvider::class,
 		Unicodeveloper\DumbPassword\DumbPasswordServiceProvider::class,
     
-    
+
     ],
-    
+
     /*
     |--------------------------------------------------------------------------
     | Class Aliases
@@ -216,7 +216,7 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
-    
+
     'aliases' => [
 
         'App' => Illuminate\Support\Facades\App::class,
@@ -270,10 +270,10 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Purifier' => Mews\Purifier\Facades\Purifier::class,
-    
-    
+
+
     ],
-    
+
     'version' => '2.8',
 
 ];

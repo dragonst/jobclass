@@ -1,7 +1,7 @@
 <?php
 
 return [
-    
+
     /*
     |--------------------------------------------------------------------------
     | Global Language Lines
@@ -10,7 +10,7 @@ return [
     | The following language lines are used by the global website.
     |
     */
-	
+
 	'Jobs ads in in the World' => 'Jobs ads in in the World',
     'Jobs ads in :location' => 'Jobs ads in :location',
 	'Find a job near you' => 'Find a job near you',
@@ -67,7 +67,7 @@ return [
     'List of Cities in' => 'List of Cities in',
     'Do you get anything for sell ?' => 'Do you get anything for sell or rent ?',
     'Sell your products and services online FOR FREE. It\'s easier than you think !' => 'Sell your products and services online FOR FREE. It\'s easier than you think !',
-    
+
     'footer_note' => '<strong>Sell</strong>, <strong>Offer</strong>, <strong>Rent</strong>, <strong>Bargain</strong>, <strong>Search</strong>, <strong>Buy</strong> products and services in <strong>:country</strong>. It\'s 100% free!',
     'Home' => 'Home',
     'About us' => 'About us',
@@ -78,8 +78,8 @@ return [
     'Terms' => 'Terms',
     'Privacy' => 'Privacy',
     'All Rights Reserved' => 'All Rights Reserved',
-    
-    
+
+
     // Login
     'Password' => 'Password',
     'Submit' => 'Submit',
@@ -96,7 +96,7 @@ return [
 	'Log Out' => 'Log Out',
 	'Signout' => 'Signout',
 	'Sign Out' => 'Sign Out',
-    
+
     // Signup
     'Create your account, Its free' => 'Create your account, It\'s 100% free',
     'Gender' => 'Gender',
@@ -125,10 +125,10 @@ return [
     'By continuing on this website, you accept our <a :attributes>Terms of Use</a>' => 'By continuing on this website, you accept our <a :attributes>Terms of Use</a>',
     'By continuing on this website, you accept our <a :attributes>Terms of Use</a> and Posting Rules' => 'By continuing on this website, you accept our <a :attributes>Terms of Use</a> and Posting Rules',
     'Register' => 'Register',
-    
+
     'Your message has been sent to our moderators' => 'Your message has been sent to our moderators.',
     'Your message has been sent to our moderators. Thank you' => 'Your message has been sent to our moderators. Thank you.',
-    
+
     'Post a Job' => 'Post a Job',
     'Post a Job' => 'Post a Job',
     'Do you have something to sell, to rent, any service to offer or a job offer? Post it at :app_name, its free, local, easy, reliable and super fast!' => 'Do you have something to sell, to rent, any service to offer or a job offer? Post it at :app_name, its free, for local business and very easy to use!',
@@ -137,7 +137,7 @@ return [
     'Create your Favorite jobs list.' => 'Create your Favorite jobs list.',
     'Create your Favorite jobs list, and save your searchs. Don\'t forget any opportunity!' => 'Create your Favorite  jobs list. And save your search. Don\'t forget any opportunity.',
 	'Do you have a post to be filled within your company? Find the right candidate in a few clicks at :app_name' => 'Do you have a post to be filled within your company? Find the right candidate in a few clicks at :app_name.',
-    
+
     // Post Ads
     'Post a Job' => 'Post a Job',
     'Category' => 'Category',
@@ -191,7 +191,7 @@ return [
     'Select a city' => 'Select a city',
     'Cities' => 'Cities',
 	'Start Date' => 'Start Date',
-    
+
     'How to find quickly a candidate?' => 'How to find quickly a candidate?',
     'Use a brief title and description of the ad' => 'Use a brief title and description of the ad',
     'Make sure you post in the correct category' => 'Make sure you post in the correct category',
@@ -200,8 +200,8 @@ return [
     'Put a reasonable price' => 'Put a reasonable price',
     'Put a min and max salary' => 'Put a min and max salary',
     'Check the ad before publish' => 'Check the ad before publish',
-    
-    
+
+
     'My ads' => 'My ads',
     'My ads on :app_name' => 'My ads on :app_name',
     'The repost has failed. Please try again.' => 'The repost has failed. Please try again.',
@@ -216,35 +216,35 @@ return [
     'My saved search on :app_name' => 'My saved search on :app_name',
     'No deletion is done. Please try again.' => 'No deletion is done. Please try again.',
     'Your account details has update successfully.' => 'Your account details has update successfully.',
-    
+
     'Your details account has updated successfully.' => 'Your details account has updated successfully.',
     'Your settings account has updated successfully.' => 'Your settings account has updated successfully.',
-    
+
     'My account' => 'My account',
     'My account on :app_name' => 'My account on :app_name',
 
 	'Your message has sent successfully' => 'Your message has sent successfully',
     'Your message has sent successfully to :contact_name.' => 'Your message has sent successfully to :contact_name.',
     'Your report has sent successfully to us. Thank you!' => 'Your report has sent successfully to us. Thank you!',
-    
+
     'Posting Ads was disabled for this time. Please try later. Thank you.' => 'Posting Ads was disabled for this time. Please try later. Thank you.',
     'Your ad has been created.' => 'Your ad has been created.',
-    
+
     'Update My Ad' => 'Update My Ad',
     'Your ad has been updated.' => 'Your ad has been updated.',
-    
+
     'Log in' => 'Log in',
     'Log in to :app_name' => 'Log in to :app_name',
     'The Email Address or Password don\'t match.' => 'The Email Address or Password don\'t match.',
     'You have been logged out.' => 'You have been logged out.',
-    
+
     'Sign Up on :app_name !' => 'Sign Up on :app_name !',
     'Your account has been created.' => 'Your account has been created.',
-    
+
     'Welcome to :app_name' => 'Welcome to :app_name !',
     'Welcome to :app_name : 100% Free Job Board' => 'Welcome to :app_name : 100% Job Board. Find a job near you. Simple, fast and efficient.',
     'Sitemap :domain - :country. 100% Free Job Board' => 'Sitemap :domain - :country. 100% Free Job Board',
-    
+
     'My Ads' => 'My Ads',
     'Archived ads' => 'Archived ads',
     'Favourite jobs' => 'Favourite jobs',
@@ -262,7 +262,7 @@ return [
     'Edit' => 'Edit',
     'Share' => 'Share',
     'Repost' => 'Repost',
-    
+
     'Close account' => 'Close account',
     'You are sure you want to close your account?' => 'You are sure you want to close your account?',
     'Yes' => 'Yes',
@@ -272,7 +272,7 @@ return [
     'count_visits' => '{0} visit|{1} visit|[2,*] visits',
     'count_favorites' => '{0} Favorite|{1} Favorite|[2,*] Favorites',
     'count_views' => '{0} view|{1} view|[2,*] views',
-    
+
     'Oops ! An error has occurred. Please correct the red fields in the form' => 'Oops ! An error has occurred. Please correct the red fields in the form',
     'visits' => 'visits',
     'Favorites' => 'Favorites',
@@ -290,7 +290,7 @@ return [
     'Preferences' => 'Preferences',
     'I want to receive newsletter.' => 'I want to receive newsletter.',
     'I want to receive advice on buying and selling.' => 'I want to receive advice on buying and selling.',
-    
+
     'Saved search' => 'Saved search',
     'You have no save search.' => 'You have no save search.',
     'Business Ads' => 'Business Ads',
@@ -299,7 +299,7 @@ return [
     'P' => 'P',
     'Please select a saved search to show the result' => 'Please select a saved search to show the result',
     'No result. Refine your search using other criteria.' => 'No result. Refine your search using other criteria.',
-    
+
     'Close' => 'Close',
     'There\'s something wrong with this ads?' => 'There\'s something wrong with this ads?',
     'Reason' => 'Reason',
@@ -308,7 +308,7 @@ return [
     'Message' => 'Message',
     'Cancel' => 'Cancel',
     'Send Report' => 'Send Report',
-    
+
     'Warning! This ad has expired. The product or service is not more available (may be)' => '<strong>Warning !</strong> This ad has expired. The product or service is not more available (may be)',
     'Back to Results' => 'Back to Results',
     ':type Job' => ':type Job',
@@ -343,32 +343,32 @@ return [
     'i.e. you@gmail.com' => 'i.e. you@gmail.com',
     'Your message here...' => 'Your message here...',
     'Send message' => 'Send message',
-    
+
     'Congratulations!' => 'Congratulations!',
     'Oops!' => 'Oops!',
-    
+
     'Download current Resume' => 'Download current Resume',
-    
+
     'Email Address' => 'Email Address',
     'Send Password Reset Link' => 'Send Password Reset Link',
     'Back to the Log In page' => 'Back to the Log In page',
     'Sign Up !' => 'Sign Up !',
-    
+
     'Reset your Password' => 'Reset your Password',
     'Reset Password' => 'Reset Password',
     'Password Confirmation' => 'Password Confirmation',
     'Reset the Password' => 'Reset Password',
-    
+
     ':domain, a Jobs Portal website. Simple, fast and efficient.' => ':domain, a Jobs Portal website. Simple, fast and efficient.',
-    
+
     'Choose a city' => 'Choose a city or region',
     'More cities' => 'More cities',
-    
+
     'Phishing' => 'Phishing',
-    
+
     'Personal Home' => 'Personal Home',
     'Payment history' => 'Payment history',
-    
+
     'Top Ads' => 'Top',
     'Featured Ads' => 'Featured',
     'Save' => 'Save',
@@ -432,19 +432,19 @@ return [
 
     'The countries' => 'The countries',
     'Our websites abroad' => 'Our websites abroad',
-    
+
     'My Account' => 'My Account',
     'Terminate Account' => 'Terminate Account',
-    
+
     'We do not like robots' => 'We do not like robots :(',
-    
+
     'Sitemap :country' => 'Sitemap - :country',
-    
+
     'We regret that we can not process your request at this time. Our engineers have been notified of this problem and will try to resolve it as soon as possible.' => 'We regret that we can not process your request at this time. Our engineers have been notified of this problem and will try to resolve it as soon as possible.',
     'Whoops, looks like something went wrong. Please try later.' => 'Whoops, looks like something went wrong. Please try later.',
     'Whoops, looks like something went wrong.' => 'Whoops, looks like something went wrong.',
     'Whoops !' => 'Whoops !',
-    
+
     'Joined' => 'Joined',
 
     'Your session has expired. Please try again.' => 'Your session has expired. Please try again.',
@@ -457,8 +457,8 @@ return [
     'View More' => 'View More',
     'View Less' => 'View Less',
     'Free' => 'Free',
-    
-    
+
+
     'Step' => 'Step',
     'Informations about your Ad' => 'Informations about your Ad',
     'Upload' => 'Upload',
@@ -468,7 +468,7 @@ return [
     'Next' => 'Next',
     'Previous' => 'Previous',
     'Skip' => 'Skip',
-    
+
     'Premium Ad' => 'Premium Ad',
     'The premium package help companies to promote their job ads by giving more visibility to their ads to attract more candidates and hire them faster.' => 'The premium package help companies to promote their job ads by giving more visibility to their ads to attract more candidates and hire them faster.',
     'Regular List' => 'Free',
@@ -483,8 +483,8 @@ return [
     'Facebook Fans' => 'Facebook Fans',
     'User' => 'User',
     'Users' => 'Users',
-    
-    
+
+
     'Sell anything for free' => 'Sell anything for FREE!',
     'Hundreds of buyers every day' => 'Hundreds of buyers every day',
     'Add images to sell faster' => 'Add images to sell faster!',
@@ -492,12 +492,12 @@ return [
     'View all Ads' => 'View all Ads',
     'Browse by' => 'Browse by',
     'View more' => 'View more',
-    
-    
+
+
     'Error in sending mail. Please contact our engineers: :app_email' => 'Error in sending mail. Please contact our engineers: :app_email',
     'The sending messages is not enabled. Please check the SMTP settings in the /.env file.' => 'The sending messages is not enabled. Please check the SMTP settings in the <code>/.env</code> file.',
     'The sending messages is not enabled. Please check the SMTP settings in the admin.' => 'The sending messages is not enabled. Please check the SMTP settings in the admin.',
-    
+
     'Your account has been deleted.' => 'Your account has been deleted.',
     'Your account has been deleted. We regret you.' => 'Your account has been deleted. We regret you.',
     'Your account has been deleted. We regret you. <a href=":url">Re-register</a> if that is a mistake.' => 'Your account has been deleted. We regret you. <a href=":url">Re-register</a> if that is a mistake.',
@@ -509,7 +509,7 @@ return [
 
     'Address' => 'Address',
     'Fill an address to display on Google Maps.' => 'Fill an address to display on Google Maps.',
-    
+
     'Unknown error. Please try again in a few minutes.' => 'Unknown error. Please try again in a few minutes.',
     'Email address not found. You can\'t use your :provider account on our website.' => 'Email address not found. You can\'t use your :provider account on our website.',
 
@@ -759,7 +759,15 @@ return [
 	'Select a Country' => 'Select a Country',
 	'See you soon.' => 'See you soon.',
 
-
+'Add Employee' => 'Add employee',
+'First Name' => 'First Name',
+'Last Name' => 'Last Name',
+'Position' => 'Position',
+'Rating' => 'Rating',
+'Comment' => 'Comment',
+'Add Employee' => 'Add Employee',
+'Leave a comment' => 'Leave a comment',
+'Rating' => 'Rating',
 
 
 

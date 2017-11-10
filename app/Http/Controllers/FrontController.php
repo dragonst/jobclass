@@ -46,7 +46,7 @@ class FrontController extends Controller
     public $cookieExpiration;
     public $cacheExpiration = 60; // In minutes (e.g. 60 for 1h)
     public $postsPicturesNumber = 1;
-	
+
 	public $paymentMethods;
 	public $countPaymentMethods = 0;
 
@@ -235,29 +235,29 @@ class FrontController extends Controller
 
         // Get all installed plugins name /=====================================================
         view()->share('installedPlugins', array_keys(plugin_installed_list()));
-		
-		
+
+
 		// Get all Countries /==================================================================
 		$countries = CountryLocalizationHelper::transAll(CountryLocalization::getCountries());
 		$cols = round($countries->count() / 4, 0, PHP_ROUND_HALF_EVEN);
 		$cols = ($cols > 0) ? $cols : 1; // Fix array_chunk with 0
 		view()->share('countryCols', $countries->chunk($cols)->all());
-		
-		
+
+
 		// Get Payment Methods /================================================================
 		$this->paymentMethods = Cache::remember('paymentMethods.all', $this->cacheExpiration, function () {
 			$paymentMethods = PaymentMethod::where(function ($query) {
 				$query->whereRaw('FIND_IN_SET("' . $this->country->get('icode') . '", LOWER(countries)) > 0')
 					  ->orWhereNull('countries');
 			})->orderBy('lft')->get();
-			
+
 			return $paymentMethods;
 		});
 		$this->countPaymentMethods = $this->paymentMethods->count();
 		view()->share('paymentMethods', $this->paymentMethods);
 		view()->share('countPaymentMethods', $this->countPaymentMethods);
-		
-		
+
+
 		// Bind JS vars to view /===============================================================
 		JavaScript::put([
 			'siteUrl'      => url('/'),
